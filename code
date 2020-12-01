@@ -1,0 +1,52 @@
+#include <iostream>
+#include <math.h>
+#include <cmath>
+#include <iomanip> 
+
+int main(void)
+{
+	float LoanAmt;//user will input loan amount
+	float Loanlgth;//user will input loan length
+	float interestrate;// user will input interestrate
+	const float MIN_LOAN_AMOUNT = 0; 
+	const float MIN_LOAN_LENGTH = 0;
+	const float MAX_LOAN_INTEREST = 100;
+	const float MIN_LOAN_INTEREST = 0;
+	
+	std::cout << "Belal Mahmood ****TEST 4****" << std::endl;
+	std::cout << "Welcome to the Mortgage calculator" << std::endl;
+
+	std::cout << "Please enter the loan amount." << std::endl;
+	std::cin >> LoanAmt;
+
+	std::cout << "Please enter the amount of years for the loan" << std::endl;//output of loan amount
+	std::cin >> Loanlgth;
+
+	std::cout << "Please enter the interest rate of the loan" << std::endl; //output for interest rate
+	std::cin >> interestrate;//input of interestrate
+	if (LoanAmt > MIN_LOAN_AMOUNT && Loanlgth > MIN_LOAN_LENGTH && interestrate > MIN_LOAN_INTEREST &&
+		
+		
+		interestrate < MAX_LOAN_INTEREST)//For IF (EXPRESSION IS TRUE) to continue
+	{
+		
+	float P = 12*Loanlgth;//months multiplied by loan length
+	float pay, pay1, pay3, pay4;
+	float pay2 = (interestrate / 100)/12;//interest rate divided by 100 to get 0.045 multiplied by 12 to get the monthly interest rate
+	pay = pow(1 + pay2, -P);//exponential
+	pay1 = (LoanAmt*pay2);
+	pay3 = (1 - pay);
+	pay4 = pay1 / pay3;
+				std::cout << std::fixed << std::setprecision(2) << "your monthly payment will be: $ "<< pay4 <<std::endl;
+			
+	}
+	else 
+		std::cout << "Error: Please enter a valid number" << std::endl;	
+		return 0;
+}	
+	
+	
+
+
+
+
